@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d1npslpsjg283"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlnn7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dlnn7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="Zheztyrnak" type="CharacterBody3D" unique_id=1778673510]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1383413409]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_dlnn7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1630796583]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dlnn7")
+animation = &"attack"

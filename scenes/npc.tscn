@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dblmqlsseshtg"]
+
+[ext_resource type="Texture2D" uid="uid://b8nl6rjaom362" path="res://assets/NPC/01-Idle/Idle 01.png" id="1_0tygy"]
+[ext_resource type="Script" uid="uid://dx46tbr8oadoe" path="res://scenes/npc.gd" id="1_gl1un"]
+[ext_resource type="Texture2D" uid="uid://cpfefbpmeenik" path="res://assets/NPC/01-Idle/Idle 02.png" id="2_sptji"]
+[ext_resource type="Texture2D" uid="uid://cl10jjxvwj5jf" path="res://assets/NPC/01-Idle/Idle 03.png" id="3_v4e37"]
+[ext_resource type="Texture2D" uid="uid://dijyeb5co8bsd" path="res://assets/NPC/01-Idle/Idle 04.png" id="4_1h837"]
+[ext_resource type="Texture2D" uid="uid://bfrvuea4avo2l" path="res://assets/NPC/01-Idle/Idle 05.png" id="5_gl1un"]
+[ext_resource type="Texture2D" uid="uid://cm5mx0172jxgn" path="res://assets/NPC/01-Idle/Idle 06.png" id="6_wuru7"]
+[ext_resource type="Texture2D" uid="uid://drmit310vdh6" path="res://assets/NPC/01-Idle/Idle 07.png" id="7_nyaq3"]
+[ext_resource type="Texture2D" uid="uid://okdrrmhqquhd" path="res://assets/NPC/01-Idle/Idle 08.png" id="8_yf2ql"]
+[ext_resource type="Texture2D" uid="uid://5w8qg1vg5yr3" path="res://assets/NPC/06-Anticipation/Anticipation 01.png" id="9_1h837"]
+[ext_resource type="Texture2D" uid="uid://d3gp2mfjrt8xh" path="res://assets/NPC/06-Anticipation/Anticipation 02.png" id="10_gl1un"]
+[ext_resource type="Texture2D" uid="uid://cp7rd2x6edh6c" path="res://assets/NPC/06-Anticipation/Anticipation 03.png" id="11_wuru7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gbmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0tygy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sptji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v4e37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1h837")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gl1un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wuru7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nyaq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yf2ql")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1h837")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gl1un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wuru7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pvipr"]
+
+[node name="NPC" type="CharacterBody3D" unique_id=773275754]
+script = ExtResource("1_gl1un")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1350393013]
+transform = Transform3D(10, 0, 0, 0, 9.848078, 1.7364818, 0, -1.7364818, 9.848078, 0, 1.2277324, 0)
+flip_h = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_8gbmn")
+animation = &"talk"
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1745916446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0162092, 0)
+shape = SubResource("CapsuleShape3D_pvipr")

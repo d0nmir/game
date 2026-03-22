@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cmvnq72cc44ca"]
+
+[ext_resource type="Script" uid="uid://u4bxuojwtnva" path="res://autoload/camera_transition.gd" id="1_65iuw"]
+
+[node name="CameraTransition" type="Node" unique_id=2119651837]
+script = ExtResource("1_65iuw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1982270324]
